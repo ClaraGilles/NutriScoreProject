@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  nutriscore:
+    build: ./nutri_score_project
+    container_name: nutriscore_app
+    volumes:
+      - ./nutri_score_project/data/raw:/app/data/raw
+      - ./nutri_score_project/data/processed:/app/data/processed
+    ports:
+      - "8501:8501"
